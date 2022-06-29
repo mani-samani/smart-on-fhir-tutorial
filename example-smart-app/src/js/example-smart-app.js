@@ -29,9 +29,9 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-		  console.log(obv);
-		  console.log(patient);
-		  console.log(ai);
+		  console.log('obv', obv);
+		  console.log('patient', patient);
+		  console.log('ai', ai);
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
