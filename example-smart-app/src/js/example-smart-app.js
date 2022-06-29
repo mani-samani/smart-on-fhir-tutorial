@@ -26,12 +26,12 @@
                     }
                   });
 
-        $.when(pt, obv).fail(onError);
+        $.when(pt, obv, ai).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
-		  console.log('obv', obv);
+        $.when(pt, obv, ai).done(function(patient, obv, ai) {
+		  console.log('observation', obv);
 		  console.log('patient', patient);
-		  console.log('ai', ai);
+		  console.log('AllergyIntolerance', ai);
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
