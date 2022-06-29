@@ -49,7 +49,13 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 		  var temperature = byCodes('8310-5');
-		  var allergy = ai.code.coding[0].display;
+		  
+		  var aiTable = "<table>";
+		  for (var i = 0; i < ai.length, i++){
+			  aiTable = aiTable + "<tr>" + "<td>" + ai[i].code.text + "</td></tr>";
+		  }
+		  
+		  aiTable = aiTable + "</table>";		  
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -58,7 +64,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
 		  p.temperature = getQuantityValueAndUnit(temperature[0]);
-		  p.allergy = allergy;
+		  p.allergy = aiTable;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
