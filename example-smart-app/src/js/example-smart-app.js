@@ -51,7 +51,7 @@
 		  var temperature = byCodes('8310-5');
 		  
 		  var aiTable = "<table>";
-		  for (var i = 0; i < ai.length, i++){
+		  for (var i = 0; i < ai.length; i++){
 			  aiTable = aiTable + "<tr>" + "<td>" + ai[i].code.text + "</td></tr>";
 		  }
 		  
