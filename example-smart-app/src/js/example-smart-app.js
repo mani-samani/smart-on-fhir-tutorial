@@ -49,7 +49,7 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 		  var temperature = byCodes('8310-5');
-		  var allergy = ai.code.display;
+		  var allergy = ai.code.coding[0].display;
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
