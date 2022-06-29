@@ -11,6 +11,9 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
+		var ai = smart.patient.api.fetchAll({
+					type: 'AllergyIntolerance'
+				  });
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -28,6 +31,7 @@
         $.when(pt, obv).done(function(patient, obv) {
 		  console.log(obv);
 		  console.log(patient);
+		  console.log(ai);
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -70,6 +74,7 @@
       } else {
         onError();
       }
+	 
     }
 
     FHIR.oauth2.ready(onReady, onError);
